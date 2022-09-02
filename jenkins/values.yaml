@@ -1,0 +1,19 @@
+controller:  
+  JCasC:
+    defaultConfig: false
+    configScripts:
+      job-configs: |
+        jobs:
+          - file: /job-dsl/example1.groovy
+          - file: /job-dsl/example2.groovy
+
+
+persistence:
+  enabled: false
+  volumes: 
+    - name: job-dsl
+      configMap:
+        name: job-dsl
+  mounts: 
+    - mountPath: /job-dsl
+      name: job-dsl
